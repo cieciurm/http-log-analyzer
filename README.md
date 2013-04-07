@@ -8,7 +8,8 @@ This is a very simple Python script for HTTP server logs analysis (so far tested
 
 `$ python analizator.py logfile [keyword]`
 
-If *keyword*, provided then the script ignores lines, which **don't** include it. I find it pretty useful, f.e. when you want to narrow your area of research.
+If *keyword* isprovided then the script ignores lines, which **don't** include it. 
+I find it pretty useful, f.e. when you want to narrow your area of research.
 
 Produces the following output:
 
