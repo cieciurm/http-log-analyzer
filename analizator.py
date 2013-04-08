@@ -1,6 +1,7 @@
-import string, sys, operator
+import string, sys, operator, socket
 
 argc = len(sys.argv)
+use_dns_names = False # if False will produce IP adresses if True domain name
 
 if argc == 1:
 	print "Enter the logfile name"
@@ -21,6 +22,10 @@ for line in file.readlines():
 	if word_to_look_for in line:
 		split_array = string.split(line)
 		split_ip = split_array[0] # ip adress in [0]
+
+		if use_dns_names == False:
+			split_ip = socket.gethostbyname(split_ip)
+
 		if split_ip in ip: # if already in the dict
 			ip[split_ip] +=1
 		else: # not yet in dict, add
