@@ -1,18 +1,23 @@
-# A simple HTTP log analizator
+# HTTP log analizator
 
 ## Intro
 
-This is a very simple Python script for HTTP server logs analysis (so far tested with *Apache* and *LiteSpeed WebServer*).
+This is a very simple Python script for HTTP server logs analysis.
+So far tested with *Apache* and *LiteSpeed WebServer*.
 
 ## Usage
 
-`$ python analizator.py logfile [keyword]`
+`$ python analizator.py [-i][-k keyword] logfile`
 
-If *keyword* isprovided then the script ignores lines, which **don't** include it. 
-I find it pretty useful, f.e. when you want to narrow your area of research.
+## Options
+
+Availible options:
+* `-i` show IP addresses instead of domain names,
+* `-k keyword` search for a keyword in the logs.
+
+## Output
 
 Produces the following output:
-
 > some_ip_1 => 2662 == 12.4608%  
 > some_ip_2 => 2475 == 11.5855%  
 > some_ip_3 => 1506 == 7.04957%  
@@ -21,3 +26,7 @@ Produces the following output:
 > ...
 
 The pattern is: *IP address => number of occurences == % of total IP addresses*
+
+## TODO
+
+Add a feature for generating .htaccess file banning IPs with number of requestes higher then provided treshold 
