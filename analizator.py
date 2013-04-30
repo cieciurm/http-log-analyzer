@@ -38,6 +38,10 @@ for line in file.readlines():
 	if keyword in line:
 		split_array = string.split(line)
 		split_ip = split_array[0] # ip adress in [0]
+
+		if use_dns_names == False:
+			split_ip = socket.gethostbyname(split_ip)
+
 		if split_ip in ip: # if already in the dict
 			ip[split_ip] +=1
 		else: # not yet in dict, add
