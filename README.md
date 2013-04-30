@@ -1,4 +1,4 @@
-# HTTP log analizator
+# HTTP log analyzer
 
 ## Intro
 
